@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HYMAP LOGIN</title>
+
+    <style>
+      * {
+        font-family: poppins;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        min-height: 100vh;
+      }
+
+      .kiri {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgb(58, 134, 95);
+        padding: 50px;
+        color: white;
+
+        font-size: 20px;
+      }
+
+      .h1-kiri,
+      .p-kiri {
+        margin: 0;
+      }
+
+      .h1-kiri {
+        font-size: 60px;
+      }
+
+      .p-kiri {
+        font-style: italic;
+      }
+
+      .kanan {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        padding: 50px;
+      }
+
+      .form-login {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        border-radius: 50%;
+      }
+
+      input {
+        border-radius: 15px;
+        border-width: 1px;
+        padding: 8px;
+      }
+
+      button {
+        margin-top: 10px;
+        background-color: rgb(100, 180, 138);
+        border-style: none;
+        border-radius: 15px;
+        padding: 7px 14px;
+        color: white;
+        cursor: pointer;
+
+        outline: 2px solid transparent;
+        outline-offset: 0px;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        outline-color: rgb(100, 180, 138);
+        outline-offset: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="kiri">
+        <h1 class="h1-kiri">HYMAP</h1>
+        <p class="p-kiri">Hydro Management Application</p>
+      </section>
+
+      <section class="kanan">
+        <h3>Silakan Login terlebih dahulu</h3>
+        <form class="form-login" action="">
+          <input placeholder="Username" type="text" name="" id="" />
+          <input placeholder="Password" type="password" name="" id="" />
+          <button type="submit">
+            <span>MASUK</span>
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
