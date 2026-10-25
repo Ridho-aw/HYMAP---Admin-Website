@@ -1,4 +1,0 @@
-﻿# HYMAP Admin Website
-
- HYMAP Admin Website adalah sebuah website untuk admin dari HYMAP untuk mengelola stok, penjadwalan dan pengiriman galon
- 
