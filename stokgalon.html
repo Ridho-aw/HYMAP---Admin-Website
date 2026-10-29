@@ -1,141 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stok Galon</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelola Stok Galon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
-        .navbar-custom {
-            background-color: teal;
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #333333;
         }
 
-        .sidebar {
-            background-color: teal;
-            min-height: calc(100vh - 60px);
-            color: white;
+        .header-custom {
+            background-color: #366c82;
+            height: 60px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .sidebar .menu-title {
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            color: #adb5bd;
+        .sidebar-custom {
+            width: 240px;
+            background-color: #2b5768;
+            flex-shrink: 0;
+        }
+
+        .avatar-bg {
+            background-color: #e5a79a;
+            width: 100px;
+            height: 100px;
+        }
+
+        .nav-link-custom {
+            color: #e0e0e0;
+            font-size: 13.5px;
+            text-decoration: none;
+            transition:
+                color 0.2s,
+                font-weight 0.2s;
+        }
+
+        .nav-link-custom:hover {
+            color: #ffffff;
             font-weight: bold;
         }
 
-        .sidebar .nav-link {
-            color: white;
-            margin-bottom: 4px;
-            padding: 8px 0;
-            border-radius: 4px;
+        .dashboard-box {
+            background-color: #dcdcdc;
+            border-radius: 16px;
         }
 
-        .profile-img {
-            width: 90px;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 50%;
+        .box-short {
+            height: 160px;
+        }
+
+        .box-tall {
+            height: 340px;
         }
 
         footer {
-            background-color: rgb(229, 227, 227);
-            font-size: 0.85rem;
+            background-color: #dcdcdc;
+            color: #333333;
+            font-size: 11px;
+            border-top: 1px solid #ccc;
         }
-        
     </style>
 </head>
 
-
-<body>
-    <!-- Top Navigasi Bar -->
-    <nav class="navbar navbar-custom px-4 shadow">
-        <a class="navbar-brand text-white fw-bold fs-4 tracking-wide" href="#">HYMAP</a>
-        <a class=" ms-auto text-white warning text-decoration-none fw-medium " href="#">Logout</a>
-    </nav>
-
-    <!-- Top Navigasi Bar -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- SideBar -->
-            <nav class="col-md-3 col-lg-2 d-md-block sidebar p-3 collapse">
-                <div class="text-center my-3">
-                    <img src="assets/lemithing.jpg" alt="methink" class="profile-img mb-2 shadow-sm">
-                    <h5 class="fw-bold m-1 tracking-wide fs-5">ADMIN</h5>
-                </div>
-                
-                <div class="mt-4">
-                    <span class="menu-title d-block mb-2">MENU</span>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Kelola Data Pelanggan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Kelola Data Sopir</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Jadwal Pengiriman</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Info Penjualan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Kelola Stok Galon</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Data Daerah Kiriman</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pantau Sopir</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <!-- Konten -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4 d-flex flex-column justify-content-between">
-                <div>
-                    <!-- Top Widget Card (Stok Galon Header) -->
-                    <div class="card p-3 mb-4 shadow-sm">
-                        <div class="row align-items-center">
-                            <div class="col-md-3">
-                                <div class="bg-secondary rounded" style="height: 110px; width: 100%;"></div>
-                            </div>
-                            <div class="col-md-9">
-                                <h2 class="fw-bold text-dark m-0">Stok Galon</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Statistics Summary Card -->
-                    <div class="card p-4 shadow-sm">
-                        <div class="row text-center align-items-center">
-                            <!-- Column 1: Galon Dipinjam -->
-                            <div class="col-md-6">
-                                <h4 class="fw-bold text-dark mb-2">Galon dipinjam</h4>
-                                <h2 class="fw-bold text-dark m-0">67</h2>
-                            </div>
-                            
-                            <!-- Divider (Hidden on mobile, shown on desktop) -->
-                            <div class="col-md-6 d-flex justify-content-center align-items-center">
-                                <div class="d-none d-md-block me-4"></div>
-                                <div class="text-center w-100">
-                                    <h4 class="fw-bold text-dark mb-2">Stok Galon</h4>
-                                    <h2 class="fw-bold text-dark m-0">727</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <footer class="text-muted py-2 px-3 mt-5 rounded-1 d-none d-md-block">
-                    <em>@2026 HYMAP CORPORATION</em>
-                </footer>
-
-            </main>
-
+<body class="d-flex flex-column min-vh-100">
+    <header class="header-custom text-white d-flex justify-content-between align-items-center px-4">
+        <div class="fs-4 fw-bold" style="letter-spacing: 1px">HYMAP</div>
+        <div class="d-flex align-items-center">
+            <a href="#" class="text-white fw-medium text-decoration-underline fs-6">Logout</a>
         </div>
+    </header>
+
+    <div class="d-flex flex-grow-1">
+        <!-- Sidebar -->
+        <aside class="sidebar-custom text-white py-4 px-3 d-flex flex-column gap-4">
+            <div class="d-flex flex-column align-items-center text-center">
+                <div class="avatar-bg rounded-circle overflow-hidden mb-3">
+                    <img src="assets/lemithing.jpg" alt="Avatar Admin"
+                        class="w-100 h-100 object-fit-cover" />
+                </div>
+                <h3 class="fs-4 fw-bold" style="letter-spacing: 1px">ADMIN</h3>
+            </div>
+
+            <div class="d-flex flex-column gap-2">
+                <div class="fw-bold text-uppercase fs-7" style="letter-spacing: 0.5px; font-size: 13px">
+                    MENU
+                </div>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                    <li>
+                        <a href="#" class="nav-link-custom">Kelola Data Pelanggan</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link-custom">Kelola Data Sopir</a>
+                    </li>
+                    <li><a href="#" class="nav-link-custom">Jadwal Pengiriman</a></li>
+                    <li><a href="#" class="nav-link-custom">Info Penjualan</a></li>
+                    <li><a href="#" class="nav-link-custom text-white fw-bold">Kelola Stok Galon</a></li>
+                    <li><a href="#" class="nav-link-custom">Data Daerah Kiriman</a></li>
+                    <li><a href="#" class="nav-link-custom">Pantau Sopir</a></li>
+                </ul>
+            </div>
+        </aside>
+        <!-- End Sidebar-->
+
+        <!-- Content Panel -->
+        <main class="flex-grow-1 bg-white p-5">
+            <h1 class="fs-2 fw-normal text-dark mb-4">Welcome Back! Admin.</h1>
+            <h2 class="fs-3 fw-bold text-black mb-4">Kelola Galon</h2>
+            <div>
+                <div class="card p-3 mb-4 shadow-sm">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <div class="bg-secondary rounded" style="height: 110px; width: 100%;"></div>
+                        </div>
+                        <div class="col-md-9">
+                            <h2 class="fw-bold text-dark m-0">Stok Galon</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-4 shadow-sm">
+                    <div class="row text-center align-items-center">
+                        <div class="col-md-6">
+                            <h4 class="fw-bold text-dark mb-2">Galon dipinjam</h4>
+                            <h2 class="fw-bold text-dark m-0">67</h2>
+                        </div>
+
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <div class="d-none d-md-block me-4"></div>
+                            <div class="text-center w-100">
+                                <h4 class="fw-bold text-dark mb-2">Stok Galon</h4>
+                                <h2 class="fw-bold text-dark m-0">727</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- End Content Panel-->
     </div>
+
+    <footer class="py-2 px-3">
+        <i>@2026 HYMAP CORPORATION</i>
+    </footer>
 </body>
+
 </html>
