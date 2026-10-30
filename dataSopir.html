@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelola Data Sopir</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #333333;
+      }
+
+      .header-custom {
+        background-color: #366c82;
+        height: 60px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .sidebar-custom {
+        width: 240px;
+        background-color: #2b5768;
+        flex-shrink: 0;
+      }
+
+      .avatar-bg {
+        background-color: #e5a79a;
+        width: 100px;
+        height: 100px;
+      }
+
+      .nav-link-custom {
+        color: #e0e0e0;
+        font-size: 13.5px;
+        text-decoration: none;
+        transition:
+          color 0.2s,
+          font-weight 0.2s;
+      }
+
+      .nav-link-custom:hover {
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      .dashboard-box {
+        background-color: #dcdcdc;
+        border-radius: 16px;
+      }
+
+      .box-short {
+        height: 160px;
+      }
+
+      .box-tall {
+        height: 340px;
+      }
+
+      footer {
+        background-color: #dcdcdc;
+        color: #333333;
+        font-size: 11px;
+        border-top: 1px solid #ccc;
+      }
+    </style>
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <header
+      class="header-custom text-white d-flex justify-content-between align-items-center px-4"
+    >
+      <div class="fs-4 fw-bold" style="letter-spacing: 1px">HYMAP</div>
+      <div class="d-flex align-items-center">
+        <a href="#" class="text-white fw-medium text-decoration-underline fs-6"
+          >Logout</a
+        >
+      </div>
+    </header>
+
+    <div class="d-flex flex-grow-1">
+      <!-- Sidebar -->
+      <aside
+        class="sidebar-custom text-white py-4 px-3 d-flex flex-column gap-4"
+      >
+        <div class="d-flex flex-column align-items-center text-center">
+          <div class="avatar-bg rounded-circle overflow-hidden mb-3">
+            <img
+              src="Asset/Kos-Kosan Kunci Biru ; Blue Lock x Reader.jpg"
+              alt="Avatar Admin"
+              class="w-100 h-100 object-fit-cover"
+            />
+          </div>
+          <h3 class="fs-4 fw-bold" style="letter-spacing: 1px">ADMIN</h3>
+        </div>
+
+        <div class="d-flex flex-column gap-2">
+          <div
+            class="fw-bold text-uppercase fs-7"
+            style="letter-spacing: 0.5px; font-size: 13px"
+          >
+            MENU
+          </div>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+            <li>
+              <a href="#" class="nav-link-custom">Kelola Data Pelanggan</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link-custom text-white fw-bold"
+                >Kelola Data Sopir</a
+              >
+            </li>
+            <li><a href="#" class="nav-link-custom">Jadwal Pengiriman</a></li>
+            <li><a href="#" class="nav-link-custom">Info Penjualan</a></li>
+            <li><a href="#" class="nav-link-custom">Kelola Stok Galon</a></li>
+          </ul>
+        </div>
+      </aside>
+      <!-- End Sidebar-->
+
+      <!-- Content Panel -->
+      <main class="flex-grow-1 bg-white p-5">
+        <h1 class="fs-2 fw-normal text-dark mb-4">Welcome Back! Admin.</h1>
+        <h2 class="fs-3 fw-bold text-black mb-4">Kelola Data Sopir</h2>
+
+        <div>
+          <div class="d-flex justify-content-end mb-2">
+            <button class="btn bg-success text-white">Tambah Sopir</button>
+          </div>
+          <table class="table table-striped table-hover" id="tabelSopir">
+            <tr>
+              <th>ID</th>
+              <th>Nama</th>
+              <th>No Telepon</th>
+              <th>Kode Armada</th>
+              <th>Username</th>
+              <th>Password</th>
+            </tr>
+            <tr>
+              <td>SP-001</td>
+              <td>Komang</td>
+              <td>08123456789</td>
+              <td>DPS-01</td>
+              <td>komang</td>
+              <td>HydroJaya321</td>
+            </tr>
+            <tr>
+              <td>SP-002</td>
+              <td>Efrid</td>
+              <td>08123456789</td>
+              <td>DPS-02</td>
+              <td>efrid</td>
+              <td>HydroJaya321</td>
+            </tr>
+            <tr>
+              <td>SP-003</td>
+              <td>Yusuf</td>
+              <td>08124324523</td>
+              <td>DPS-01</td>
+              <td>yusuf</td>
+              <td>HydroJaya321</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Modal Edit Data -->
+        <div
+          class="modal fade"
+          id="kelolaSopir"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit Data</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="editForm">
+                  <div class="mb-3">
+                    <label class="form-label">ID</label>
+                    <input
+                      type="text"
+                      id="editId"
+                      class="form-control"
+                      readonly
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Nama</label>
+                    <input type="text" id="editNama" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">No Telepon</label>
+                    <input type="text" id="editTelp" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Kode Armada</label>
+                    <div class="form-field">
+                      <input
+                        class="radio"
+                        name="edit-armada"
+                        type="radio"
+                        id="armada1"
+                        value="DPS-01"
+                      />
+                      <label class="form-check-label" for="armada1">DPS-01</label>
+                    </div>
+                    <div class="form-field">
+                      <input
+                        class="radio"
+                        name="edit-armada"
+                        type="radio"
+                        id="armada2"
+                        value="DPS-02"
+                      />
+                      <label class="form-check-label" for="armada2">DPS-02</label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" id="editUsername" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="text" id="editPassword" class="form-control" />
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100 mb-1">
+                    Simpan
+                  </button>
+                  <button type="button" class="btn btn-danger w-100">
+                    Hapus
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+          let activeRow = null; // Menyimpan reference row yang sedang diewit
+          const kelolaSopir = new bootstrap.Modal(
+            document.getElementById("kelolaSopir"),
+          );
+
+          // Event Delegation: Tangkap klik pada baris tabel (<tbody>)
+          document
+            .querySelector("#tabelSopir tbody")
+            .addEventListener("click", function (e) {
+              const row = e.target.closest("tr");
+              if (!row) return;
+
+              activeRow = row;
+              const cells = row.querySelectorAll("td");
+
+              // Isi input modal berdasarkan teks di kolom row
+              document.getElementById("editId").value = cells[0].textContent;
+              document.getElementById("editNama").value = cells[1].textContent;
+              document.getElementById("editTelp").value = cells[2].textContent;
+              document.getElementById("editUsername").value =
+                cells[4].textContent;
+              document.getElementById("editPassword").value =
+                cells[5].textContent;
+
+              const armadaValue = cells[3].textContent.trim(); // Ambil teks DPS-01 / DPS-02
+              const selectedRadio = document.querySelector(
+                `input[name="edit-armada"][value="${armadaValue}"]`,
+              );
+
+              if (selectedRadio) {
+                selectedRadio.checked = true; // Centang radio yang nilainya cocok
+              } else {
+                // Uncheck semua jika nilai di tabel tidak cocok/kosong
+                document
+                  .querySelectorAll('input[name="edit-armada"]')
+                  .forEach((r) => (r.checked = false));
+              }
+
+              // Tampilkan Modal
+              kelolaSopir.show();
+            });
+
+          // Handle submit form untuk update data di tabel
+          document
+            .getElementById("editForm")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              if (activeRow) {
+                const cells = activeRow.querySelectorAll("td");
+
+                const checkedArmada = document.querySelector(
+                  'input[name="editArmada"]:checked',
+                );
+                const selectedArmadaValue = checkedArmada
+                  ? checkedArmada.value
+                  : "";
+
+                cells[0].textContent = document.getElementById("editId").value;
+                cells[1].textContent =
+                  document.getElementById("editNama").value;
+                cells[2].textContent =
+                  document.getElementById("editTelp").value;
+                cells[3].textContent =
+                  document.getElementById("editArmada").value;
+                cells[4].textContent =
+                  document.getElementById("editUsername").value;
+                cells[5].textContent =
+                  document.getElementById("editPassword").value;
+
+                // Sembunyikan Modal
+                kelolaSopir.hide();
+              }
+            });
+        </script>
+      </main>
+      <!-- End Content Panel-->
+    </div>
+
+    <footer class="py-2 px-3">
+      <i>@2026 HYMAP CORPORATION</i>
+    </footer>
+  </body>
+</html>
