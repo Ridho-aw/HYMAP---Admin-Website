@@ -19,11 +19,10 @@ function Sidebar({ adminName }) {
                     <li><Link to="/" className="nav-link-custom">Dashboard</Link></li>
                     <li><Link to="#" className="nav-link-custom">Kelola Data Pelanggan</Link></li>
                     <li><Link to="#" className="nav-link-custom">Kelola Data Sopir</Link></li>
-                    <li><Link to="#" className="nav-link-custom">Jadwal Pengiriman</Link></li>
+                    <li><Link to="/statusPengiriman" className="nav-link-custom">Jadwal Pengiriman</Link></li>
                     <li><Link to="#" className="nav-link-custom">Info Penjualan</Link></li>
-                    <li><Link to="#" className="nav-link-custom">Kelola Stok Galon</Link></li>
+                    <li><Link to="/stokGalon" className="nav-link-custom">Kelola Stok Galon</Link></li>
                     <li><Link to="/daerahKiriman" className="nav-link-custom">Data Daerah Kiriman</Link></li>
-                    <li><Link to="#" className="nav-link-custom">Pantau Sopir</Link></li>
                 </ul>
             </div>
         </aside>

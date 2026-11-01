@@ -1,4 +1,4 @@
-export const fetchAdminUser = async () => {
+const fetchAdminUser = async () => {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/users');
         if (!response.ok) {
@@ -11,3 +11,5 @@ export const fetchAdminUser = async () => {
         return null;
     }
 };
+
+export { fetchAdminUser };
