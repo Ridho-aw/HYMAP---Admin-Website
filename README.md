@@ -1,4 +1,4 @@
-﻿# HYMAP Admin Website
+**HYMAP admin website** 
+HYMAP admin website adalah sebuah websie admin untuk mengelola stok galon seperti mengatur jadwal pengiriman, update stok galon, menugaskan driver pengiriman hingga pengolalaan pembelian galon
 
- HYMAP Admin Website adalah sebuah website untuk admin dari HYMAP untuk mengelola stok, penjadwalan dan pengiriman galon
- 
+
