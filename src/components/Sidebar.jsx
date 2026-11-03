@@ -16,9 +16,9 @@ function Sidebar({ adminName }) {
             <div className="d-flex flex-column gap-2">
                 <div className="fw-bold text-uppercase fs-7" style={{ letterSpacing: '0.5px', fontSize: '13px' }}>MENU</div>
                 <ul className="list-unstyled d-flex flex-column gap-2 mb-0">
-                    <li><Link to="/" className="nav-link-custom">Dashboard</Link></li>
-                    <li><Link to="#" className="nav-link-custom">Kelola Data Pelanggan</Link></li>
-                    <li><Link to="#" className="nav-link-custom">Kelola Data Sopir</Link></li>
+                    <li><Link to="/dashboard" className="nav-link-custom">Dashboard</Link></li>
+                    <li><Link to="/kelolaPelanggan" className="nav-link-custom">Kelola Data Pelanggan</Link></li>
+                    <li><Link to="/kelolaSopir" className="nav-link-custom">Kelola Data Sopir</Link></li>
                     <li><Link to="/statusPengiriman" className="nav-link-custom">Jadwal Pengiriman</Link></li>
                     <li><Link to="#" className="nav-link-custom">Info Penjualan</Link></li>
                     <li><Link to="/stokGalon" className="nav-link-custom">Kelola Stok Galon</Link></li>

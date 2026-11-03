@@ -1,0 +1,48 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.kiri {
+  background-color: #3b7080;
+}
+
+.btn-custom {
+  margin-top: 10px;
+  background-color: #3b7080;
+  border-style: none;
+  border-radius: 15px;
+  padding: 7px 14px;
+  color: white;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 0px;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  outline-color: #3b7080;
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .halo {
+    min-height: auto;
+  }
+  
+  .kiri {
+    align-items: center;
+    min-height: 100px;
+    padding: 10px;
+  }
+
+  .kanan {
+    min-height: 400px;
+    text-align: center;
+    justify-content: start;
+    margin-top: 50px;
+  }
+
+  .kanan h3 {
+    font-size: large;
+  }
+}
