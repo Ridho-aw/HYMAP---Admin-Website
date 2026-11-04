@@ -35,7 +35,6 @@ const KelolaSopir = () => {
 
   return (
     <main className="flex-grow-1 bg-white p-5 w-100">
-      <h1 className="fs-2 fw-normal text-dark mb-4">Welcome Back! Admin.</h1>
       <h2 className="fs-3 fw-bold text-black mb-4">Kelola Data Sopir</h2>
 
       <div>
