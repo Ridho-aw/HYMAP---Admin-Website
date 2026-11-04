@@ -1,5 +1,9 @@
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.p-title {
+  font-size: 60px;
 }
 
 .kiri {
@@ -28,7 +32,7 @@
   .halo {
     min-height: auto;
   }
-  
+
   .kiri {
     align-items: center;
     min-height: 100px;
