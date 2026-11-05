@@ -19,7 +19,7 @@ const Login = () => {
       <div className="row min-vh-100">
         
         <div className="kiri col-md-5 text-white d-flex flex-column justify-content-center p-5">
-          <p className="p-title fw-bold mb-0">HYMAP</p>
+          <h1 className="h1-kiri fs-1 fw-bold">HYMAP</h1>
           <p className="p-kiri fst-italic">Hydro Management Application</p>
         </div>
 
