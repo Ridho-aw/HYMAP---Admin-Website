@@ -48,8 +48,10 @@ const KelolaPelanggan = () => {
   };
 
   const handleDelete = () => {
+    if (window.confirm("Yakin hapus pelanggan ini?")) {
     setCustomers(customers.filter((item) => item.id !== formData.id));
     setShowModal(false);
+    }
   };
 
   return (
