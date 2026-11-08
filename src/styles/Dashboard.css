@@ -52,3 +52,44 @@ footer {
   font-size: 11px;
   border-top: 1px solid #ccc;
 }
+
+.sidebar-custom {
+  width: 240px;
+  background-color: #2b5768;
+  flex-shrink: 0;
+  transition: all 0.3s ease-in-out;
+  margin-left: 0;
+}
+
+/* Menyembunyikan sidebar di Laptop (geser kiri sejauh ukuran sidebar) */
+.sidebar-hidden {
+  margin-left: -240px;
+}
+
+/* Pengaturan khusus Mobile / Tablet (Layar Kecil) */
+@media (max-width: 768px) {
+  .sidebar-custom {
+    position: fixed;
+    height: calc(100vh - 60px);
+    z-index: 1050;
+    /* Reset margin agar tidak pakai gaya laptop */
+    margin-left: 0 !important; 
+    /* Munculkan sidebar pakai transform */
+    transform: translateX(0);
+  }
+  
+  /* Saat disembunyikan di Mobile, geser dengan transform */
+  .sidebar-hidden {
+    transform: translateX(-100%);
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+}
