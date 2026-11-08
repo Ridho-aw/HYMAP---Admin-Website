@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import profileImg from "/src/assets/placeholderLogoDashboard.jpg";
 
-function Sidebar({ adminName }) {
+function Sidebar({ adminName, isOpen }) {
     return (
-        <aside className="sidebar-custom text-white py-4 px-3 d-flex flex-column gap-4">
+        <aside className={`sidebar-custom text-white py-4 px-3 d-flex flex-column gap-4 ${isOpen ? '' : 'sidebar-hidden'}`}>
             <div className="d-flex flex-column align-items-center text-center">
                 <div className="avatar-bg rounded-circle overflow-hidden mb-3">
                     <img src={profileImg} alt="Avatar Admin" className="w-100 h-100 object-fit-cover" />

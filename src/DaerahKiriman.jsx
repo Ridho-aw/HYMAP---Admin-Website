@@ -26,12 +26,7 @@ function DaerahKiriman() {
                 const cityName = user.address.city;
                 const streetName = user.address.street;
                 const listPembeli = [user.name, `Keluarga ${user.username.substring(0, 4)}`];
-                const testPembeliRandom = (user.id % 4) + 2;
-
-                for (let i = 2; i < testPembeliRandom; i++) {
-                    listPembeli.push(`${user.username[i].substring(0, 4)}`);
-                }
-                // aduhhhhh nge bug mulu dah, Note perbaikan besok. ini bug nya namanya ga keluar mulu
+                
 
                 let group = acc.find(g => g.groupName === cityName);
                 if (!group) {
