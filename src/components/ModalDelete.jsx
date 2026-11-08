@@ -1,5 +1,3 @@
-import React from 'react';
-
 function ModalDelete({ isOpen, onClose, onConfirm, itemTitle }) {
     if (!isOpen) return null;
 

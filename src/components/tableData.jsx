@@ -1,5 +1,3 @@
-import React from 'react';
-
 function TableData({ headers, children }) {
     return (
         <div className="table-responsive border">
