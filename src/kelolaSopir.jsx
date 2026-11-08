@@ -33,6 +33,19 @@ const KelolaSopir = () => {
     setShowModal(false); 
   };
 
+  const handleDelete = (id) => {
+  if (window.confirm("Yakin hapus sopir ini?")) {
+    setDrivers(drivers.filter((item) => item.id !== formData.id));
+    setShowModal(false);
+  }
+};
+
+const handleAdd = () => {
+  const newId = `SP-${String(drivers.length + 1).padStart(3, "0")}`;
+  setFormData({ id: newId, nama: "", telp: "", armada: "DPS-01", username: "", password: "" });
+  setShowModal(true);
+};
+
   return (
     <main className="flex-grow-1 bg-white p-5 w-100">
       <h1 className="fs-2 fw-normal text-dark mb-4">Welcome Back! Admin.</h1>
@@ -40,7 +53,7 @@ const KelolaSopir = () => {
 
       <div>
         <div className="d-flex justify-content-end mb-2">
-          <button className="btn btn-sm btn-outline-success">Tambah Sopir</button>
+          <button className="btn btn-sm btn-outline-success" onClick={handleAdd}>Tambah Sopir</button>
         </div>
         
         <table className="table table-striped table-hover" id="tabelSopir">
@@ -127,7 +140,7 @@ const KelolaSopir = () => {
                     </div>
                     
                     <button type="submit" className="btn btn-primary w-100 mb-2">Simpan</button>
-                    <button type="button" className="btn btn-danger w-100" onClick={() => setShowModal(false)}>Hapus</button>
+                    <button type="button" className="btn btn-danger w-100" onClick={handleDelete}>Hapus</button>
                   </form>
                 </div>
               </div>
