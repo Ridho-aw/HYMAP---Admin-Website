@@ -7,6 +7,7 @@ import StokGalon from "./stokGalon";
 import Login from "./Login";
 import KelolaSopir from "./kelolaSopir";
 import KelolaPelanggan from "./KelolaPelanggan";
+import LaporanPenjualan from './LaporanPenjualan';
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/daerahKiriman" element={<DaerahKiriman />} />
                 <Route path="/statusPengiriman" element={<StatusPengiriman />} />
                 <Route path="/stokGalon" element={<StokGalon />} />
+                <Route path="/info-penjualan" element={<LaporanPenjualan />} />
             </Route>
         </Routes>
     );

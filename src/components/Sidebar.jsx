@@ -23,6 +23,7 @@ function Sidebar({ adminName }) {
                     <li><Link to="#" className="nav-link-custom">Info Penjualan</Link></li>
                     <li><Link to="/stokGalon" className="nav-link-custom">Kelola Stok Galon</Link></li>
                     <li><Link to="/daerahKiriman" className="nav-link-custom">Data Daerah Kiriman</Link></li>
+                    <li><Link to="/laporanPenjualan" className="nav-link-custom">Laporan Penjualan</Link></li>
                 </ul>
             </div>
         </aside>
