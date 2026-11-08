@@ -61,24 +61,19 @@ footer {
   margin-left: 0;
 }
 
-/* Menyembunyikan sidebar di Laptop (geser kiri sejauh ukuran sidebar) */
 .sidebar-hidden {
   margin-left: -240px;
 }
 
-/* Pengaturan khusus Mobile / Tablet (Layar Kecil) */
 @media (max-width: 768px) {
   .sidebar-custom {
     position: fixed;
     height: calc(100vh - 60px);
     z-index: 1050;
-    /* Reset margin agar tidak pakai gaya laptop */
     margin-left: 0 !important; 
-    /* Munculkan sidebar pakai transform */
     transform: translateX(0);
   }
   
-  /* Saat disembunyikan di Mobile, geser dengan transform */
   .sidebar-hidden {
     transform: translateX(-100%);
   }

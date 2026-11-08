@@ -1,5 +1,3 @@
-import React from 'react';
-
 function ModalBuyerList({ isOpen, onClose, regionName, buyersList }) {
     if (!isOpen) return null;
 
