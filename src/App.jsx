@@ -21,7 +21,7 @@ function App() {
                 <Route path="/daerahKiriman" element={<DaerahKiriman />} />
                 <Route path="/statusPengiriman" element={<StatusPengiriman />} />
                 <Route path="/stokGalon" element={<StokGalon />} />
-                <Route path="/info-penjualan" element={<LaporanPenjualan />} />
+                <Route path="/laporanPenjualan" element={<LaporanPenjualan />} />
             </Route>
         </Routes>
     );
