@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import TableData from './components/tableData';
 import { fetchUsersData } from './services/userDataService';
+import DropdownStatus from './components/DropdownStatus';
 
 function StatusPengiriman() {
     const [pengiriman, setPengiriman] = useState([]);
@@ -30,25 +31,34 @@ function StatusPengiriman() {
                             <td className="fw-bold px-3">PL-{item.id.toString().padStart(3, '0')}</td>
                             <td className="px-3">{item.name}</td>
                             <td className="px-3">{`${item.address.street}, ${item.address.city}`}</td>
+                            
                             <td className="px-3">
                                 <div className="d-flex align-items-center gap-2">
-                                    <select className="form-select form-select-sm w-auto" defaultValue="belum">
-                                        <option value="terkirim">Terkirim</option>
-                                        <option value="belum">Belum</option>
-                                    </select>
+                                    <DropdownStatus 
+                                        defaultValue="belum"
+                                        options={[
+                                            { value: 'terkirim', label: 'Terkirim' },
+                                            { value: 'belum', label: 'Belum' }
+                                        ]}
+                                    />
                                     <button className="btn btn-sm btn-outline-secondary d-flex align-items-center gap-1">
                                         <i className="bi bi-image"></i> Lihat Bukti
                                     </button>
                                 </div>
                             </td>
+                            
                             <td className="px-3">
-                                <select className="form-select form-select-sm w-auto" defaultValue="pending">
-                                    <option value="cash">Cash</option>
-                                    <option value="transfer">Transfer</option>
-                                    <option value="bon">Bon</option>
-                                    <option value="pending">Pending</option>
-                                </select>
+                                <DropdownStatus 
+                                    defaultValue="pending"
+                                    options={[
+                                        { value: 'cash', label: 'Cash' },
+                                        { value: 'transfer', label: 'Transfer' },
+                                        { value: 'bon', label: 'Bon' },
+                                        { value: 'pending', label: 'Pending' }
+                                    ]}
+                                />
                             </td>
+                            
                         </tr>
                     ))}
                 </TableData>
