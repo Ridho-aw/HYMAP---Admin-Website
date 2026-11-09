@@ -60,7 +60,6 @@ const KelolaPelanggan = () => {
 
       <div className="d-flex flex-grow-1">
         <main className="flex-grow-1 bg-white p-5">
-          <h1 className="fs-2 fw-normal text-dark mb-4">Welcome Back! Admin.</h1>
           <h2 className="fs-3 fw-bold text-black mb-4">Kelola Data Pelanggan</h2>
 
         <div className="d-flex justify-content-end mb-2">
