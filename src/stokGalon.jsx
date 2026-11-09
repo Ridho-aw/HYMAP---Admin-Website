@@ -14,7 +14,7 @@ function StokGalon() {
     };
 
     return (
-        <main className="flex-grow-1 p-5">
+        <main className="p-5 bg-white">
             <div className="d-flex justify-content-between align-items-center mb-4">
                 <h2 className="fs-3 fw-bold text-black m-0">Kelola Galon</h2>
                 

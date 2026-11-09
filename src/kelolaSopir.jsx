@@ -47,7 +47,7 @@ const handleAdd = () => {
 };
 
   return (
-    <main className="flex-grow-1 bg-white p-5 w-100">
+    <main className="bg-white p-5">
       <h2 className="fs-3 fw-bold text-black mb-4">Kelola Data Sopir</h2>
 
       <div>

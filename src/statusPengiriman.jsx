@@ -18,7 +18,7 @@ function StatusPengiriman() {
     const tableHeaders = ["ID", "Nama", "Alamat", "Status Pengiriman", "Status Pembayaran"];
 
     return (
-        <main className="p-5">
+        <main className="p-5 bg-white">
             <h2 className="fs-3 fw-bold text-black mb-4">Kelola Status Pengiriman</h2>
 
             {loading ? (
