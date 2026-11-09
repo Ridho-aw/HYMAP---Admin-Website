@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import StatistikItem from './components/StatistikItem';
 
 function StokGalon() {
     const [galonDipinjam, setGalonDipinjam] = useState(67);
     const [stokGalon, setStokGalon] = useState(727);
     const [galonRusak, setGalonRusak] = useState(0);
 
-    // State untuk mengontrol mode edit
     const [isEditing, setIsEditing] = useState(false);
 
     const toggleEdit = () => {
@@ -44,50 +44,26 @@ function StokGalon() {
                 <div className="card p-4 shadow-sm">
                     <div className="row text-center align-items-center">
                         
-                        <div className="col-md-4 mb-3 mb-md-0">
-                            <h4 className="fw-bold text-dark mb-2">Galon dipinjam</h4>
-                            {isEditing ? (
-                                <input 
-                                    type="number" 
-                                    className="form-control text-center mx-auto fs-4 fw-bold" 
-                                    style={{ maxWidth: '120px' }}
-                                    value={galonDipinjam} 
-                                    onChange={(e) => setGalonDipinjam(e.target.value)} 
-                                />
-                            ) : (
-                                <h2 className="fw-bold text-dark m-0">{galonDipinjam}</h2>
-                            )}
-                        </div>
+                        <StatistikItem 
+                            judul="Galon dipinjam" 
+                            nilai={galonDipinjam} 
+                            isEditing={isEditing} 
+                            onChange={(e) => setGalonDipinjam(e.target.value)} 
+                        />
 
-                        <div className="col-md-4 mb-3 mb-md-0">
-                            <h4 className="fw-bold text-dark mb-2">Stok Galon</h4>
-                            {isEditing ? (
-                                <input 
-                                    type="number" 
-                                    className="form-control text-center mx-auto fs-4 fw-bold" 
-                                    style={{ maxWidth: '120px' }}
-                                    value={stokGalon} 
-                                    onChange={(e) => setStokGalon(e.target.value)} 
-                                />
-                            ) : (
-                                <h2 className="fw-bold text-dark m-0">{stokGalon}</h2>
-                            )}
-                        </div>
+                        <StatistikItem 
+                            judul="Stok Galon" 
+                            nilai={stokGalon} 
+                            isEditing={isEditing} 
+                            onChange={(e) => setStokGalon(e.target.value)} 
+                        />
 
-                        <div className="col-md-4">
-                            <h4 className="fw-bold text-dark mb-2">Galon Rusak</h4>
-                            {isEditing ? (
-                                <input 
-                                    type="number" 
-                                    className="form-control text-center mx-auto fs-4 fw-bold" 
-                                    style={{ maxWidth: '120px' }}
-                                    value={galonRusak} 
-                                    onChange={(e) => setGalonRusak(e.target.value)} 
-                                />
-                            ) : (
-                                <h2 className="fw-bold m-0">{galonRusak}</h2>
-                            )}
-                        </div>
+                        <StatistikItem 
+                            judul="Galon Rusak" 
+                            nilai={galonRusak} 
+                            isEditing={isEditing} 
+                            onChange={(e) => setGalonRusak(e.target.value)} 
+                        />
 
                     </div>
                 </div>
