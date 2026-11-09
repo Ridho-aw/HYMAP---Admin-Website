@@ -105,7 +105,7 @@ function DaerahKiriman() {
     const tableHeaders = ["Sub-Wilayah (Jalan)", "Jumlah Pembeli", "Rincian Pembeli", "Aksi"];
 
     return (
-        <main className="flex-grow-1 p-5">
+        <main className="p-5 bg-white">
             <h2 className="fs-3 fw-bold text-black mb-4">Data Daerah Kiriman & Grup Wilayah</h2>
 
             {loading ? (

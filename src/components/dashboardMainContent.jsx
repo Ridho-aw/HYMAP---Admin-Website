@@ -38,7 +38,7 @@ function DashMainContent() {
     }, []);
 
     return (
-        <main className="flex-grow-1 bg-white p-5">
+        <main className="p-5 bg-white">
             <h1 className="fs-2 fw-normal text-dark mb-4">
                 Welcome Back! {AdminUsername?.username ? AdminUsername.username : 'Admin'}.
             </h1>
